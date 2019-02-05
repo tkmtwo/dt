@@ -1,0 +1,51 @@
+
+
+plugins {
+  id 'java'
+  id 'maven'
+  id 'checkstyle'
+}
+
+/*
+checkstyle {
+  configFile = new File(rootDir, "config/checkstyle.xml")
+  sourceSets = [sourceSets.main, sourceSets.test]
+  //sourceSets = [sourceSets.main]
+}
+*/
+
+
+compileJava {
+  //options.compilerArgs << '-Xlint:unchecked,deprecation'
+  options.compilerArgs << '-Xlint:unchecked'
+  options.compilerArgs << '-proc:none'
+}
+compileTestJava {
+  //options.compilerArgs << '-Xlint:unchecked,deprecation'
+  options.compilerArgs << '-Xlint:unchecked'
+  options.compilerArgs << '-proc:none'
+}
+
+
+
+dependencies {
+  
+  implementation project(':dt-core')
+  implementation "com.google.guava:guava:${depVersionGuava}"
+  implementation "com.fasterxml.jackson.core:jackson-databind:${depVersionJackson}"
+  
+  testImplementation "junit:junit:${depVersionJunit}"
+  testImplementation "org.springframework:spring-test:${depVersionSpringFramework}"
+  
+}
+
+
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "file://$buildDir/repo")
+      //repository(url: "file://$rootDir/../tkmtwo-mvn-repo/release")
+    }
+  }
+}

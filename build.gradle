@@ -1,0 +1,43 @@
+
+
+repositories {
+}
+
+
+subprojects {
+  
+  repositories {
+    mavenCentral()
+    jcenter()
+
+  }
+  
+  group = 'io.github.tkmtwo'
+  version = '0.0.0'
+  
+  ext {
+    
+    //
+    // Dependency Versions
+    //
+    depVersionGuava = '27.0.1-jre'
+    depVersionJackson = '2.9.8'
+    depVersionJunit = '4.12'
+    depVersionLogback = '1.2.3'
+    //depVersionMockito = '1.10.4'
+    //depVersionSlf4J = '1.7.25'
+    depVersionSpringFramework = '4.1.6.RELEASE'
+
+    //
+    // Javadoc Links
+    //
+    javadocLinks = [
+      "https://docs.oracle.com/en/java/javase/11/docs/api/",
+      "http://docs.spring.io/spring/docs/current/javadoc-api/",
+    "http://fasterxml.github.io/jackson-databind/javadoc/2.9.8/"
+  ] as String[]
+    
+  }
+  
+}
+

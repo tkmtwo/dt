@@ -1,0 +1,14 @@
+*~
+[#]*[#]
+*.classpath
+*.project
+*.settings
+Event*.queue
+
+.gradle
+build
+.classpath
+.project
+.settings/
+target/
+
